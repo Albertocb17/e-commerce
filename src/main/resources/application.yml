@@ -1,0 +1,3 @@
+spring:
+  jackson.time-zone: Europe/Madrid
+  jackson.date-format: yyyy-MM-dd-HH.mm.ss
