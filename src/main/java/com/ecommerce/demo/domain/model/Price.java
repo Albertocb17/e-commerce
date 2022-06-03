@@ -1,23 +1,26 @@
 package com.ecommerce.demo.domain.model;
 
+import java.time.Instant;
+
 import com.ecommerce.demo.domain.vo.MoneyVO;
-import com.ecommerce.demo.domain.vo.PriceDateVO;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
+@EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Price {
 
 	private Brand brand;
 
-	private PriceDateVO startDate;
+	private Instant startDate;
 
-	private PriceDateVO endDate;
+	private Instant endDate;
 
 	private Long priceList;
 

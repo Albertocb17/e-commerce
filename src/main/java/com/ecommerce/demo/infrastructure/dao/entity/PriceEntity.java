@@ -4,20 +4,26 @@ import java.time.Instant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.ForeignKey;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "PRICES")
 @Entity
 public class PriceEntity {
 
-	@Column(name = "BRAND_ID", nullable = false)
-	private Long brandId;
+	@ManyToOne
+	@JoinColumn(name = "BRAND_ID", foreignKey = @ForeignKey(name = "BRANDS_FK"), nullable = false)
+	private BrandEntity brand;
 
 	@Column(name = "START_DATE", nullable = false)
 	private Instant startDate;
@@ -27,11 +33,11 @@ public class PriceEntity {
 
 	@Id
 	@Column(name = "PRICE_LIST", nullable = false)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long priceList;
 
-	@Column(name = "PRODUCT_ID", nullable = false)
-	private Long productId;
+	@ManyToOne
+	@JoinColumn(name = "PRODUCT_ID", foreignKey = @ForeignKey(name = "PRODUCTS_FK"), nullable = false)
+	private ProductEntity product;
 
 	@Column(name = "PRIORITY", nullable = false)
 	private Integer priority;

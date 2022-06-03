@@ -13,10 +13,6 @@ import com.ecommerce.demo.infrastructure.dao.entity.PriceEntity;
 @Mapper(componentModel = "spring")
 public interface PricePersistenceMapper {
 
-	@Mapping(target = "brand.id", source = "brandId")
-	@Mapping(target = "product.id", source = "productId")
-	@Mapping(target = "startDate.date", source = "startDate")
-	@Mapping(target = "endDate.date", source = "endDate")
 	@Mapping(target = "money", source = "priceEntity", qualifiedByName = "entityToMoneyVO")
 	Price entityToDomain(PriceEntity priceEntity);
 
