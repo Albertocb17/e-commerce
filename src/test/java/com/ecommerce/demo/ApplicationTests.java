@@ -17,7 +17,7 @@ class ApplicationTests {
 	@Test
 	void applicationStarts() {
 		assertDoesNotThrow(() -> {
-			Application.main(new String[] {});
+			Application.main(new String[] { "--server.port=0" });
 		});
 	}
 
