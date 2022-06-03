@@ -38,29 +38,6 @@ class ControllerIntegrationTests {
 	@Autowired
 	private ObjectMapper mapper;
 
-//	@Autowired
-//	private BrandJpaRepository brandRepository;
-//
-//	@Autowired
-//	private ProductJpaRepository productRepository;
-//
-//	@Autowired
-//	private PriceJpaRepository priceRepository;
-
-//	@BeforeEach
-//	void initDatabase() {
-//		brandRepository.save(PriceMother.brandMotherTest());
-//		productRepository.save(PriceMother.productMotherTest());
-//		priceRepository.saveAll(PriceMother.priceListMotherTest());
-//	}
-//
-//	@AfterEach
-//	void deleteAllDatabase() {
-//		priceRepository.deleteAll();
-//		brandRepository.deleteAll();
-//		productRepository.deleteAll();
-//	}
-
 	private static Stream<Arguments> usesCasesOk() {
 		return Stream.of(
 				arguments(1, "2020-06-14-10.00.00", PriceMother.price1MotherTest()), 
