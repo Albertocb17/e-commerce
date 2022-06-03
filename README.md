@@ -1,5 +1,5 @@
 # E-commerce
- E-commerce demostration project.
+ E-commerce demostration project with an endpoint that returns a product rate based on a date, a product and a brand.
  
 ### Run the project
 
